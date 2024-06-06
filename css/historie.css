@@ -1,0 +1,411 @@
+body {
+    font-family: "Comic Neue", cursive;
+    margin: 0;
+    padding: 0;
+    background-color: #DCCCBE;
+    max-width: 3000px;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #DCCCBE;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+footer {
+    text-align: center;
+    padding: 3px;
+    background-color: rgb(42, 73, 134);
+    color: white;
+    margin-top: 100px;
+  }
+.logo {
+    order: 1; /* Placér logoet til højre */
+}
+
+.logo img {
+    width: 200px; /* Juster størrelsen efter behov */
+    margin-left: 20px; /* Afstand fra venstre kant */
+}
+
+h3 {
+    font-size: 30px;
+}
+
+p {
+    font-size: 20px;
+    line-height: 1.8; /* Forbedrer læsbarheden */
+}
+
+nav {
+    order: 1; /* Placér navigationen i midten */
+    flex: 1; /* Optag den resterende plads */
+    display: flex;
+    justify-content: center; /* Centrer navigationen */
+}
+
+nav ul {
+    display: flex;
+    justify-content: center; /* Sørg for at elementer i navigationen er centreret */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    padding-right: 200px;
+}
+
+nav ul li {
+    margin: 0 30px; /* Afstand mellem navigationselementer */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.intro {
+    position: relative;
+    text-align: center;
+    padding: 10px 0;
+    margin-bottom: 10%;
+}
+
+h1 {
+    font-family: "Comic Neue", cursive;
+    font-size: 150px;
+    margin: 0%;
+    position: relative; /* Tilføjer position relative for at kunne bruge top */
+    top: 120px; /* Flytter teksten ned */
+}
+
+.drawing {
+    position: absolute; /* placere tegningen ifrohold til intro */
+    top: 0px;
+    left: 20%;
+    transform: translateX(-50%);
+    z-index: 1; /* placere tegning bag bryggeriet men foran baggrunden */
+    width: 300px;
+}
+
+.brewery {
+    position: relative; /* Bryggeriet skal også have position relative for at .drawing kan placeres korrekt */
+    z-index: 2; /* Bryggeriet placeres foran tegningen */
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    top: 100px;
+}
+
+.timeline {
+    background-color: #DCCCBE;
+}
+
+.year {
+    position: relative;
+}
+
+.year h2 {
+    font-size: 100px;
+    padding-left: 10%;
+    margin: 0 0 0;
+    position: relative;
+    z-index: 2;
+}
+
+.section-divider {
+    border: none; /* Fjern standard border */
+    height: 2px; /* Indstil højden på linjen */
+    background-color: #614b32; /* Indstil baggrundsfarven til gul */
+    margin: 0;
+    position: absolute; /* Positioner den absolut indenfor .year */
+    top: -40px; /* Juster for at være under h2 */
+    width: 60%;
+    left: 20%;
+    z-index: 1;
+}
+
+.content {
+    display: flex;
+    align-items: flex-start;
+    margin-left: 10%;
+    margin-right: 5%;
+}
+
+.content .text {
+    flex: 1;
+    padding-right: 100px;
+}
+
+.content img {
+    width: 600px;
+    height: auto;
+    top: -150px; /* Flyt billedet 50 pixels opad */
+    z-index: 2; /* Sørg for, at det er over den gule boks */
+}
+
+.burger-menu {
+    display: none; /* Skjult som standard */
+    font-size: 34px; /* Større touch-venlig burger menu */
+    text-align: right;
+    color: black;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Breakpoints for responsive design */
+@media (min-width: 1664px) and (max-width: 2200px) {
+    h1 {
+        top: 150px; /* Juster for større skærme */
+    }
+    .drawing {
+        width: 300px; /* Reducer størrelsen af tegningen for små skærme */
+        left: 28%;
+    }
+
+    h1 {
+        font-size: 150px; /* Reducer størrelsen af teksten for små skærme */
+        top: 100px; /* Juster placeringen af teksten */
+    }
+
+    .brewery {
+        top: 80px; /* Juster placeringen af bryggeriet */
+    }
+
+    p {
+        font-size: 25px;
+    }
+
+    .content img {
+        width: 700px;
+        height: auto;
+        position: relative; /* Sørg for, at billedet er positioneret i forhold til sin normale position */
+        top: -100px; /* Flyt billedet 50 pixels opad */
+        z-index: 2; /* Sørg for, at det er over den gule boks */
+    }
+}
+
+@media (min-width: 1441px) and (max-width: 1663px) {
+    h1 {
+        top: 150px; /* Juster for større skærme */
+    }
+    .drawing {
+        width: 300px; /* Reducer størrelsen af tegningen for små skærme */
+        left: 24%;
+    }
+
+    h1 {
+        font-size: 150px; /* Reducer størrelsen af teksten for små skærme */
+        top: 100px; /* Juster placeringen af teksten */
+    }
+
+    .brewery {
+        top: 80px; /* Juster placeringen af bryggeriet */
+    }
+    .content img {
+        width: 600px;
+        height: auto;
+        position: relative; /* Sørg for, at billedet er positioneret i forhold til sin normale position */
+        top: -100px; /* Flyt billedet 50 pixels opad */
+        z-index: 2; /* Sørg for, at det er over den gule boks */
+    }
+}
+
+@media (min-width: 1330px) and (max-width: 1440px) {
+    h1 {
+        top: 130px; /* Juster for mellemstore skærme */
+    }
+    .drawing {
+        width: 300px; /* Reducer størrelsen af tegningen for små skærme */
+        left: 23%;
+        top: 50px;
+    }
+    .content img {
+        width: 600px;
+        height: auto;
+        position: relative; /* Sørg for, at billedet er positioneret i forhold til sin normale position */
+        top: -70px; /* Flyt billedet 50 pixels opad */
+        z-index: 2; /* Sørg for, at det er over den gule boks */
+    }
+}
+
+@media (min-width: 1000px) and (max-width: 1329px) {
+    h1 {
+        top: 110px; /* Juster for mindre skærme */
+    }
+    .drawing {
+        width: 250px; /* Reducer størrelsen af tegningen for små skærme */
+        left: 15%;
+        top: 100px;
+    }
+    .content img {
+        width: 800px;
+        height: auto;
+    }
+    nav ul {
+        padding-right: 0px;
+    }
+    nav {
+        justify-content: left;
+    }
+
+    .content {
+        flex-direction: column; /* Kolonnerne stables ovenpå hinanden */
+        align-items: center; /* Centrer indholdet */
+        margin-left: 80px;
+        margin-right: 80px;
+    }
+}
+
+@media (max-width: 999px) and (min-width: 777px) {
+    .content {
+        flex-direction: column; /* Kolonnerne stables ovenpå hinanden */
+        align-items: center; /* Centrer indholdet */
+        margin-left: 80px;
+        margin-right: 80px;
+    }
+
+    .content .text {
+        padding-right: 0; /* Fjern padding når kolonnerne stables */
+        margin-bottom: 0px; /* Tilføj lidt afstand mellem tekst og billede */
+    }
+
+    .drawing {
+        display: none;
+    }
+
+    h1 {
+        font-size: 1000%; /* Reducer størrelsen af teksten for små skærme */
+        top: 30px; /* Juster placeringen af teksten */
+    }
+
+    .brewery {
+        top: 0px; /* Juster placeringen af bryggeriet */
+    }
+    nav ul {
+        padding-right: 0px;
+    }
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        margin: 0 auto; /* Center logoet */
+    }
+
+    .logo img {
+        width: 300px; /* Juster størrelsen efter behov */
+    }
+}
+
+@media (max-width: 776px) and (min-width: 594px) {
+    .content {
+        flex-direction: column; /* Kolonnerne stables ovenpå hinanden */
+        align-items: center; /* Centrer indholdet */
+        margin-left: 80px;
+        margin-right: 80px;
+    }
+
+    .content .text {
+        padding-right: 0; /* Fjern padding når kolonnerne stables */
+        margin-bottom: 0px; /* Tilføj lidt afstand mellem tekst og billede */
+    }
+
+    .drawing {
+        display: none;
+    }
+
+    h1 {
+        font-size: 1000%; /* Reducer størrelsen af teksten for små skærme */
+        top: 30px; /* Juster placeringen af teksten */
+    }
+
+    .brewery {
+        top: 0px; /* Juster placeringen af bryggeriet */
+    }
+    nav ul {
+        padding-right: 0px;
+    }
+
+    nav ul li a {
+        font-size: 20px;
+    }
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        margin: 0 auto; /* Center logoet */
+    }
+
+    .logo img {
+        width: 200px; /* Juster størrelsen efter behov */
+    }
+}
+
+
+@media (max-width: 593px) {
+    .content {
+        flex-direction: column; /* Kolonnerne stables ovenpå hinanden */
+        align-items: center; /* Centrer indholdet */
+    }
+
+    .content .text {
+        padding-right: 0; /* Fjern padding når kolonnerne stables */
+        margin-bottom: 20px; /* Tilføj lidt afstand mellem tekst og billede */
+    }
+
+    .burger-menu {
+        display: block; /* Viser burger menu på mobile enheder */
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    nav ul{
+        flex-direction: column
+    }
+
+
+    h1 {
+        font-size: 100px; /* Reducer størrelsen af teksten for små skærme */
+        top: 0px; /* Juster placeringen af teksten */
+    }
+
+    .brewery {
+        top: 300px; /* Juster placeringen af bryggeriet */
+    }
+    .timeline {
+        padding-top: 300px;
+    }
+
+    .drawing {
+        width: 250px; /* Reducer størrelsen af tegningen for små skærme */
+        position: absolute;
+        left: 50%;
+        top: 150px;
+    }
+    .content img {
+        width: 350px;
+        height: auto;
+    }
+    .logo {
+        display: none;
+    }
+
+    .section-divider{
+        top: -5px; /* Juster for at være under h2 */
+    }
+}

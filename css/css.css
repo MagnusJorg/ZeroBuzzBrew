@@ -1,0 +1,155 @@
+/* Indstiller box-modellen */
+* {
+  box-sizing: border-box;
+}
+
+/* Grundlæggende styling til body og html */
+body, html {
+  margin: 0;
+  background-color: #91c0da;
+  padding: 0;
+  height: 100%;
+}
+
+/* Styling til header */
+.header {
+  background-color: #91c0da;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Styling til top navigation */
+.topnav {
+  display: flex;
+  justify-content: center;
+  gap: 6%;
+}
+
+.topnav a {
+  color: black;
+  font-family: "Comic Neue", cursive;
+  font-weight: bold;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Burger menu ikon */
+.burger-menu {
+  display: none;
+  font-size: 34px;
+  text-align: right;
+  color: black;
+}
+
+/* Kolonne styling */
+.column {
+  float: left;
+  width: 50%;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+
+.column.logo {
+  padding-top: 0%;
+}
+
+/* Styling til maskotten */
+.maskot {
+  max-width: 65%;
+}
+
+/* Styling til logo */
+.logo {
+  max-width: 80%;
+  padding-top: 10%;
+  z-index: 10;
+}
+
+/* Container til ølbilleder */
+.beer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  grid-gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Styling til ølbilleder */
+.beer {
+  width: 70px;
+  align-self: start;
+}
+
+/* Responsiv styling til mobil */
+@media screen and (max-width: 600px) {
+  .topnav {
+    display: none;
+  }
+
+  .burger-menu {
+    display: block;
+    z-index: 20; /* Sikrer at burger menuen er over andre elementer */
+  }
+
+  .column {
+    width: 100%;
+    padding: 0;
+  }
+
+  .header {
+    background-color: #91c0da;
+    padding: 20px;
+    text-align: center;
+    position: relative; /* Tilføjer position relative for at indeholde det absolut positionerede logo */
+  }
+
+  .logo {
+    position: absolute;
+    top: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 100%;
+    z-index: 10; /* Sikrer at burger menuen er over andre elementer */
+  }
+
+  .maskot {
+    order: 1;
+    padding-top: 350px;
+    max-width: 90%;
+  }
+
+  .beer {
+    display: none;
+  }
+}
+
+/* Responsiv styling til tablet */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  .column {
+    width: 50%;
+  }
+
+  .logo {
+    max-width: 100%;
+    padding-top: 20%;
+  }
+
+  .maskot {
+    max-width: 100%;
+    padding-top: 0;
+  }
+
+  nav ul{
+    flex-direction: column
+}
+
+}

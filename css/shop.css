@@ -1,0 +1,143 @@
+body {
+    font-family: "Comic Neue", cursive;
+    margin: 0;
+    padding: 0;
+    background-color: #b2d6ff;
+    max-width: 3000px;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #b2d6ff;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.logo {
+    order: 1; /* Placér logoet til højre */
+}
+
+footer {
+    text-align: center;
+    padding: 3px;
+    background-color: rgb(42, 73, 134);
+    color: white;
+    margin-top: 100px;
+  }
+
+.logo img {
+    width: 200px; /* Juster størrelsen efter behov */
+    margin-left: 20px; /* Afstand fra venstre kant */
+}
+
+.burger-menu {
+    display: none; /* Skjult som standard */
+    font-size: 34px; /* Større touch-venlig burger menu */
+    text-align: right;
+    color: black;
+    padding: 10px;
+    cursor: pointer;
+}
+
+nav {
+    order: 1; /* Placér navigationen i midten */
+    flex: 1; /* Optag den resterende plads */
+    display: flex;
+    justify-content: center; /* Centrer navigationen */
+}
+
+nav ul {
+    display: flex;
+    justify-content: center; /* Sørg for at elementer i navigationen er centreret */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    padding-right: 200px;
+}
+
+nav ul li {
+    margin: 0 30px; /* Afstand mellem navigationselementer */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    text-align: center;
+    background-color: rgb(247 247 247);
+}
+
+.price {
+    color: grey;
+    font-size: 22px;
+}
+
+.card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+.card button:hover {
+    opacity: 0.7;
+}
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .burger-menu {
+        display: block;
+    }
+
+    nav {
+        display: none;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        order: 2; /* Flyt logoet til midten */
+    }
+
+    .burger-menu {
+        order: 1; /* Flyt burger menuen til toppen */
+        align-self: flex-end;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
